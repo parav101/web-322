@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <title>API Test</title>
+        <script src="js/myscript.js">
+        </script>
+    </head>
+    <body>
+        <h2>WEB322 Week 9 Example App - AJAX Programming &amp; WEB API</h2>
+        <p>This page is a front-end web app that makes AJAX (http) requests, i.e. consumes local/remote web APIs.</p>
+
+
+        <hr>
+        <h4>Test our (local) WEB API with output in browser console (Press F<sub>12</sub></sub>):</h4>
+        <!-- Get All Users -->
+        <button type="button" onclick="getAllUsers()">Get All Users</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         OR test directly in browser: <a href="/api/users">/api/users</a><br /><br />
+        
+        <!-- Add New User -->
+        <button type="button" onclick="addNewUser()">Add New User</button><br /><br />
+
+        <!-- Get User By Id -->
+        <button type="button" onclick="getUserById()">Get User</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         OR test directly in browser: <a href="/api/users/22">/api/users/22</a><br /><br />
+
+        <!-- Update User By Id -->
+        <button type="button" onclick="updateUserById()">Update User</button><br /><br />
+        <!-- Delete User By Id -->
+        <button type="button" onclick="deleteUserById()">Delete User</button>
+
+
+        <hr> 
+        <h4>Test the (remote) WEB API - <a href="https://reqres.in/" target="_blank">https://reqres.in/</a></h4>
+        <!-- Get All Users -->
+        <button type="button" onclick="makeAJAXRequest('GET', 'https://reqres.in/api/users?page=2')">Get All Users</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         OR test directly in browser: <a href="https://reqres.in/api/users">https://reqres.in/api/users</a><br /><br />
+        <!-- Add New User -->
+        <button type="button" onclick="addNewUser_reqres_in()">Add New User</button><br /> 
+        <p>Try to complete the rest by yourself ...</p>
+
+        
+        <hr> 
+        <h4>Test the Cross-Origin Resource Sharing (CORS) in the Web API</h4>
+        
+        <!-- Get All Users for CORS -->
+        <button type="button" onclick="makeAJAXRequest('GET', `http://localhost:8080/api/users`)">Get All Users from localhost:8080/api/users</button><br /><br />
+        <button type="button" onclick="makeAJAXRequest('GET', 'http://localhost:8081/api/users')">Get All Users from localhost:8081/api/users</button> (Need to start anothe server: duplicate the current web project, change the port to 8081, remove the statements for CORS middleware)
+
+    </body>
+</html>

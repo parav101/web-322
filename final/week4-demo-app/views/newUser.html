@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/mystyle.css">
+    <title>New User</title>
+</head>
+<body>
+    <h2>Form: Add new user</h2>
+    <div class="container">
+        <form method="post" action="/newuser">
+      
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Full name.." value="John"><br><br>
+            
+          <label for="age">Age</label>
+          <input type="text" id="age" name="age" placeholder="Age.." value=22><br><br>
+      
+          <label for="photoUrl">Photo Url</label>
+          <input type="text" id="photoUrl" name="photoUrl" placeholder="Photo Url.."><br><br>
+
+          <label for="occupation">Occupation</label>
+          <input type="text" id="occupation" name="occupation" placeholder="Occupation.."><br><br>
+   
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" placeholder="Company.." ><br><br>
+      
+          <input type="submit" value="Submit">
+      
+        </form>
+        <!-- ..... -->
+      </div> 
+</body>
+</html>

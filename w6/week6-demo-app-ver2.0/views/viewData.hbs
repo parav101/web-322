@@ -1,0 +1,58 @@
+
+<h2>View Data: Retrieve - GetOne</h2>
+<p>Handlebars Templating - Rendering data of single object with <mark>Handlebars expressions \{{...}}</mark> and built-in <mark>"if" and "unless" helpers</mark>:</p>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Photo</th>
+        <th>Ocupation</th>
+        <th>Company</th>
+        <th>Contract?</th>
+    </tr>
+    {{#if data.visible}}
+        <tr>
+            <td>{{#strong}}{{data.name}}{{/strong}}</td>
+            <td>{{data.age}}</td>
+            <td><img src={{data.photo}} alt={{data.name}} height="50"/></td>
+            <td>{{data.occupation}}</td>
+            <td>{{data.company}}</td>
+
+            {{#unless data.contract}} <td>Full-Time employee</td>{{/unless}}
+            {{#if data.contract}} <td>Part-Time employee</td>{{/if}}
+
+        </tr>
+    {{else}}
+        <tr>
+            <td colspan="4">User: '{{data.name}}' has hidden their information</td>
+        </tr>
+    {{/if}}
+
+</table>
+
+<hr><br>
+
+<h4>Custom Helper Example(s) - 1</h4>
+<p>Testing the custom helper - <b>warning:</b></p> 
+{{!-- <div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    ... Some Warning Text ...
+</div> --}}
+{{#warning}}... Some Warning Text ...{{/warning}}
+
+<hr>
+<p>Testing the custom helper - <b>strong:</b></p>
+{{!-- <strong>The text with stong importance!</strong> --}}
+{{#strong}}The text with stong importance!{{/strong}}
+
+<br>
+Name: {{#strong}}{{data.name}}{{/strong}}
+
+<hr><br>
+
+<h4>Testing Partial Views - 1</h4>
+{{> welcome }}
+{{> welcome data }}
+            

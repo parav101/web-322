@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+<body>
+    <h1>About</h1>
+    <p><a href='/'>Go back to home page</a></p>
+
+    <h2>Week 4 Demo App</h2>
+
+    <ul>
+        <li>Three important objects in Express.js
+            <ul>
+                <li>app, req, res objects</li>
+            </ul>
+        </li>
+        <li>Configuration & Settings
+            <ul>
+                <li>Static folder: click <a href="images/Express.js.png">here</a> to see the image under the static folder "public"</li>
+            </ul>
+        </li>
+        <li>Route definition
+            <ul>
+                <li>Structure: app.METHOD(PATH, HANDLER)​</li>
+            </ul>
+        </li>
+        <li>Middleware</li>
+        <li>Error Handling</li>
+    </ul>
+
+    <hr>
+    <h4>The ways to send data to server & access the data inside the routes on server:</h4>
+    <ol>
+        <li>using query string in url, e.g. 
+            <a href="/users?occupation=student&page=8&perPage=10">
+                /users<mark>?occupation=student&page=8&perPage=10</mark></a> 
+            <br> - to access the data on server: <b>req.query.occupation, req.query.page, req.query.perPage</b>; OR all query parametes in one JavaScript object: <b>req.query</b>
+        </li>
+        <li>using http request body, sent from e.g. <a href="/newuser">Add new user form</a>: name=John and age=22, ... 
+            <br> - to access the data on server: <b>req.body.name, req.body.age</b>; OR all form data in one JavaScript object: <b>req.body</b>
+        </li>
+        <li>using parameter in route path, e.g. route: <a href="/users/12">/users/12</a> (id=12), <a href="/users/25">/users/25</a>
+            <br> - to access the data on server: <b>req.params.id</b>; OR all parameters in one JavaScript object: <b>req.params</b>
+        </li>
+        <li>using cookies</li>
+    </ol>
+    
+    <hr>
+    <h4>Web app (pages) vs Web API (json data)</h4>
+    <ul>
+        <li>res.send(): <a href="/users?occupation=student&page=8&perPage=10">
+          /users?occupation=student&page=8&perPage=10</a> </li>
+        <li>res.json(): <a href="/users?occupation=student&page=8&perPage=10&json4api=yes">
+          /users?occupation=student&page=8&perPage=10<mark>&json4api=yes</mark></a> </li>
+    </ul>
+
+</body>
+</html>

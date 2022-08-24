@@ -1,0 +1,51 @@
+
+<h2>View Data 2: Retrieve - GetAll</h2>
+<p>Handlebars Templating - Rendering array of objects with <mark>Handlebars expressions \{{...}}</mark> and built-in <mark>"each" helper</mark>:</p>
+<table class="table table-bordered">
+    <tr>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Photo</th>
+        <th>Ocupation</th>
+        <th>Company</th>
+    </tr>
+
+    {{#each data}}
+        <tr>
+            <td>{{@index}}</td>
+            <td>{{name}}</td>
+            <td>{{this.age}}</td>
+            <td><img src={{photo}} alt={{this.name}} height="50"/></td>
+            <td>{{occupation}}</td>
+            <td>{{company}}</td>
+        </tr>
+    {{else}}
+        <tr>
+            <td colspan="4">No Data Available</td>
+        </tr>
+    {{/each}}
+</table>
+
+<p>Note: to access the second object's property in the array, we can use data.[1].property, e.g.data.[1].name: {{data.[1].name}}</p>
+
+<hr><br>
+
+<h4>Custom Helper Example(s) - 2</h4>
+<p>Testing custom helper with context (i.e. array data) - <b>list</b> </p>
+{{!-- <ul>
+    <li>Name: {{data.[0].name}} Age: {{data.[0].age}} Occupation: {{data.[0].occupation}} Company: {{data.[0].company}}</li>
+    <li>Name: {{data.[1].name}} Age: {{data.[1].age}} Occupation: {{data.[1].occupation}} Company: {{data.[1].company}}</li>
+    <li>... ...</li>
+</ul> --}}
+{{#list data}}
+    Name: {{name}} Age: {{age}} Occupation: {{occupation}} Company: {{company}}
+{{/list}}
+
+<hr><br>
+
+<h4>Testing Partial Views - 2</h4>
+{{> welcome data.[0] }}
+{{> welcome data.[1] }}
+
+           
